@@ -17,11 +17,18 @@ function frcaptcha_wp_login_show_widget()
     frcaptcha_enqueue_widget_scripts();
 }
 
-add_filter('authenticate', 'frcaptcha_wp_login_validate', 20, 3);
+add_filter('wp_authenticate_user', 'frcaptcha_wp_login_validate', 20, 2);
 
-function frcaptcha_wp_login_validate($user, $username, $password)
+function frcaptcha_wp_login_validate($user, $password)
 {
     if ($user instanceof WP_Error) {
+        return $user;
+    }
+
+    // When 2FA is configured using Wordfence, the filter is run twice. We want to skip the second run.
+    // See https://github.com/wordpress-premium/wordfence/blob/master/modules/login-security/classes/controller/wordfencels.php#L568
+    $is2FA = (defined('WORDFENCE_LS_AUTHENTICATION_CHECK') && WORDFENCE_LS_AUTHENTICATION_CHECK);
+    if ($is2FA) {
         return $user;
     }
 
