@@ -21,13 +21,13 @@ First configure and create a SDK client
 ```php
 use FriendlyCaptcha\SDK\{Client, ClientConfig}
 
-$config = new \FriendlyCaptcha\SDK\ClientConfig();
+$config = new ClientConfig();
 $config->setAPIKey("<YOUR API KEY>")->setSitekey("<YOUR SITEKEY (optional)>");
 
 // You can also specify which endpoint to use, for example `"global"` or `"eu"`.
 // $config->setEndpoint("eu")
 
-$captchaClient = new \FriendlyCaptcha\SDK\Client()
+$captchaClient = new Client($config)
 ```
 
 Then use it in the endpoint you want to protect
@@ -88,7 +88,9 @@ First download the [friendly-captcha-sdk-testserver](https://github.com/Friendly
 # Run the friendly-captcha-sdk-testserver
 ./friendly-captcha-sdk-testserver serve
 ```
+
 Then open a new terminal, and run the following
+
 ```shell
 # Generate the autoload files
 ./bin/composer.phar dump

@@ -2,17 +2,17 @@
     "packages": [
         {
             "name": "friendlycaptcha/sdk",
-            "version": "v0.1.0",
-            "version_normalized": "0.1.0.0",
+            "version": "0.1.2",
+            "version_normalized": "0.1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendlyCaptcha/friendly-captcha-php.git",
-                "reference": "4883c22ee8b913fdf085d2ac236c6169e304e3ad"
+                "reference": "9cc23e800f36ba281d017f481b7d3a070a03d010"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendlyCaptcha/friendly-captcha-php/zipball/4883c22ee8b913fdf085d2ac236c6169e304e3ad",
-                "reference": "4883c22ee8b913fdf085d2ac236c6169e304e3ad",
+                "url": "https://api.github.com/repos/FriendlyCaptcha/friendly-captcha-php/zipball/9cc23e800f36ba281d017f481b7d3a070a03d010",
+                "reference": "9cc23e800f36ba281d017f481b7d3a070a03d010",
                 "shasum": ""
             },
             "require": {
@@ -21,7 +21,7 @@
             "require-dev": {
                 "phpunit/phpunit": ">=7"
             },
-            "time": "2024-01-02T15:48:15+00:00",
+            "time": "2025-03-05T16:37:37+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -43,7 +43,7 @@
             "description": "Serverside SDK for the Friendly Captcha API.",
             "support": {
                 "issues": "https://github.com/FriendlyCaptcha/friendly-captcha-php/issues",
-                "source": "https://github.com/FriendlyCaptcha/friendly-captcha-php/tree/v0.1.0"
+                "source": "https://github.com/FriendlyCaptcha/friendly-captcha-php/tree/0.1.2"
             },
             "install-path": "../friendlycaptcha/sdk"
         }

@@ -7,6 +7,7 @@ namespace FriendlyCaptcha\SDK\Test;
 use FriendlyCaptcha\SDK\{Client, ClientConfig};
 use Exception;
 
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
 const MOCK_SERVER_URL = "http://localhost:1090";
@@ -73,7 +74,7 @@ final class VerifyTest extends TestCase
 
 
 
-    public function sdkMockTestsProvider(): array
+    public static function sdkMockTestsProvider(): array
     {
         $cases = loadSDKTestsFromServer(MOCK_SERVER_URL)["tests"];
         $testCases = array();
@@ -86,6 +87,7 @@ final class VerifyTest extends TestCase
     /**
      * @dataProvider sdkMockTestsProvider
      */
+    #[DataProvider('sdkMockTestsProvider')]
     public function testSDKTestServerCase($test): void
     {
         $opts = new ClientConfig();
