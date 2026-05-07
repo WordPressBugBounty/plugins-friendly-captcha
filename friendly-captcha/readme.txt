@@ -4,7 +4,7 @@ Tags: captcha, antispam, spam, contact form, recaptcha, friendly-captcha, block 
 Requires at least: 5.0
 Tested up to: 6.8
 Requires PHP: 7.3
-Stable tag: 1.16.0
+Stable tag: 1.17.0
 License: GPL v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -60,6 +60,30 @@ To use Friendly Captcha, you can create an account at [www.friendlycaptcha.com](
 = You don't support a certain plugin. How can I get support for it added? =
 Open a PR on GitHub [here](https://github.com/FriendlyCaptcha/friendly-captcha-wordpress) or just email the authors of the plugin itself. Adding Friendly Captcha support is typically quite a quick task for most plugins.
 
+= How do I add Friendly Captcha to a custom or unsupported form? =
+
+Enable the **Generic Integration (for custom and unsupported plugins)** option in the Friendly Captcha settings page. This exposes two WordPress filters that you can use from your own theme or plugin code to render the widget and verify the solution.
+
+**1. Render the widget inside your form**
+
+Apply the `frc_captcha_append_widget` filter to append the widget HTML wherever you want it to appear (typically just before the submit button):
+
+`<?php echo apply_filters('frc_captcha_append_widget', ''); ?>`
+
+**2. Verify the solution on submit**
+
+When the form is submitted, read the captcha solution from `$_POST` and pass it through the `frc_captcha_validation` filter. The second argument controls the network-failure behavior: `true` lets the user through (lax), `false` blocks them (strict).
+
+`<?php
+$solution = isset($_POST['frc-captcha-solution']) ? $_POST['frc-captcha-solution'] : '';
+$is_human = apply_filters('frc_captcha_validation', $solution, true);
+if (!$is_human) {
+    // Reject submission, e.g. show an error.
+}
+?>`
+
+If you have Friendly Captcha v2 enabled, use `frc-captcha-response` as the field name instead of `frc-captcha-solution`.
+
 = Where can I get more information about Friendly Captcha? =
 Please see our website at: [www.friendlycaptcha.com](https://friendlycaptcha.com/)
 
@@ -95,6 +119,12 @@ If you see an integration that's missing, please [open a pull request](https://g
 However, you may wish to email the authors of plugins you'd like to support Friendly Captcha: it will usually take them only an hour or two to add native support if they choose to do so. This will simplify your use of Friendly Captcha, and is the best solution in the long run.
 
 == Changelog ==
+
+= 1.17.0 =
+
+* Add support for generic integrations with custom PHP-Code
+* Add support for SI Schedule+Registration
+* Update Friendly Captcha SDKs to most recent versions
 
 = 1.16.0 =
 
