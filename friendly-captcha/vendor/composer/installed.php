@@ -20,9 +20,9 @@
             'dev_requirement' => false,
         ),
         'friendlycaptcha/sdk' => array(
-            'pretty_version' => '0.1.2',
-            'version' => '0.1.2.0',
-            'reference' => '9cc23e800f36ba281d017f481b7d3a070a03d010',
+            'pretty_version' => '0.2.3',
+            'version' => '0.2.3.0',
+            'reference' => '9bd060f71b1cbcd4eeddb038db3fd7fe5e49189d',
             'type' => 'library',
             'install_path' => __DIR__ . '/../friendlycaptcha/sdk',
             'aliases' => array(),

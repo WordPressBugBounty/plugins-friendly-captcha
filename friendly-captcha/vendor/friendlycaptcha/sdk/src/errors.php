@@ -10,6 +10,9 @@ class ErrorCodes
     /** (-1, internal) Failed to encode request */
     public static $FailedToEncodeRequest = "failed_to_encode_request";
 
+    /** @deprecated Long captcha responses are truncated and sent to the API instead. This is never set. */
+    public static $ResponseTooLong = "response_too_long";
+
     /** (-1, internal) Failed to talk to the Friendly Captcha API */
     public static $RequestFailed = "request_failed";
 
@@ -38,6 +41,15 @@ class ErrorCodes
     public static $ResponseTimeout = "response_timeout";
     /** (200) The response has already been used. */
     public static $ResponseDuplicate = "response_duplicate";
+
+    /** (200) The Risk Intelligence token is invalid. */
+    public static $TokenInvalid = "token_invalid";
+
+    /** (200) The Risk Intelligence token has expired. */
+    public static $TokenExpired = "token_expired";
+
+    /** (400) The Risk Intelligence token is missing from the request. */
+    public static $TokenMissing = "token_missing";
 
     /** (400) Something else is wrong with your request, e.g. the request body was empty. */
     public static $BadRequest = "bad_request";

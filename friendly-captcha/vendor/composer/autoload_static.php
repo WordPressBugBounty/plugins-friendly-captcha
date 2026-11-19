@@ -4,24 +4,46 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitabf157cf28eb088e74a14c026749e730
+class ComposerStaticInite7a49695fb5830ce7af21d04acfd2b13
 {
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'FriendlyCaptcha\\SDK\\APIResponseError' => __DIR__ . '/..' . '/friendlycaptcha/sdk/src/response.php',
         'FriendlyCaptcha\\SDK\\Client' => __DIR__ . '/..' . '/friendlycaptcha/sdk/src/client.php',
+        'FriendlyCaptcha\\SDK\\ClientAutomationData' => __DIR__ . '/..' . '/friendlycaptcha/sdk/src/risk_intelligence.php',
+        'FriendlyCaptcha\\SDK\\ClientAutomationKnownBotData' => __DIR__ . '/..' . '/friendlycaptcha/sdk/src/risk_intelligence.php',
+        'FriendlyCaptcha\\SDK\\ClientAutomationToolData' => __DIR__ . '/..' . '/friendlycaptcha/sdk/src/risk_intelligence.php',
+        'FriendlyCaptcha\\SDK\\ClientBrowserData' => __DIR__ . '/..' . '/friendlycaptcha/sdk/src/risk_intelligence.php',
+        'FriendlyCaptcha\\SDK\\ClientBrowserEngineData' => __DIR__ . '/..' . '/friendlycaptcha/sdk/src/risk_intelligence.php',
         'FriendlyCaptcha\\SDK\\ClientConfig' => __DIR__ . '/..' . '/friendlycaptcha/sdk/src/config.php',
+        'FriendlyCaptcha\\SDK\\ClientData' => __DIR__ . '/..' . '/friendlycaptcha/sdk/src/risk_intelligence.php',
+        'FriendlyCaptcha\\SDK\\ClientDeviceData' => __DIR__ . '/..' . '/friendlycaptcha/sdk/src/risk_intelligence.php',
+        'FriendlyCaptcha\\SDK\\ClientOSData' => __DIR__ . '/..' . '/friendlycaptcha/sdk/src/risk_intelligence.php',
+        'FriendlyCaptcha\\SDK\\ClientTimeZoneData' => __DIR__ . '/..' . '/friendlycaptcha/sdk/src/risk_intelligence.php',
         'FriendlyCaptcha\\SDK\\ErrorCodes' => __DIR__ . '/..' . '/friendlycaptcha/sdk/src/errors.php',
+        'FriendlyCaptcha\\SDK\\NetworkAbuseContactData' => __DIR__ . '/..' . '/friendlycaptcha/sdk/src/risk_intelligence.php',
+        'FriendlyCaptcha\\SDK\\NetworkAnonymizationData' => __DIR__ . '/..' . '/friendlycaptcha/sdk/src/risk_intelligence.php',
+        'FriendlyCaptcha\\SDK\\NetworkAutonomousSystemData' => __DIR__ . '/..' . '/friendlycaptcha/sdk/src/risk_intelligence.php',
+        'FriendlyCaptcha\\SDK\\NetworkData' => __DIR__ . '/..' . '/friendlycaptcha/sdk/src/risk_intelligence.php',
+        'FriendlyCaptcha\\SDK\\NetworkGeolocationCountryData' => __DIR__ . '/..' . '/friendlycaptcha/sdk/src/risk_intelligence.php',
+        'FriendlyCaptcha\\SDK\\NetworkGeolocationData' => __DIR__ . '/..' . '/friendlycaptcha/sdk/src/risk_intelligence.php',
+        'FriendlyCaptcha\\SDK\\RiskIntelligenceData' => __DIR__ . '/..' . '/friendlycaptcha/sdk/src/risk_intelligence.php',
+        'FriendlyCaptcha\\SDK\\RiskIntelligenceRetrieveResponse' => __DIR__ . '/..' . '/friendlycaptcha/sdk/src/response.php',
+        'FriendlyCaptcha\\SDK\\RiskIntelligenceRetrieveResponseData' => __DIR__ . '/..' . '/friendlycaptcha/sdk/src/response.php',
+        'FriendlyCaptcha\\SDK\\RiskIntelligenceRetrieveResult' => __DIR__ . '/..' . '/friendlycaptcha/sdk/src/result.php',
+        'FriendlyCaptcha\\SDK\\RiskIntelligenceRetrieveTokenData' => __DIR__ . '/..' . '/friendlycaptcha/sdk/src/response.php',
+        'FriendlyCaptcha\\SDK\\RiskScoresData' => __DIR__ . '/..' . '/friendlycaptcha/sdk/src/risk_intelligence.php',
+        'FriendlyCaptcha\\SDK\\TLSSignatureData' => __DIR__ . '/..' . '/friendlycaptcha/sdk/src/risk_intelligence.php',
         'FriendlyCaptcha\\SDK\\VerifyResponse' => __DIR__ . '/..' . '/friendlycaptcha/sdk/src/response.php',
         'FriendlyCaptcha\\SDK\\VerifyResponseChallengeData' => __DIR__ . '/..' . '/friendlycaptcha/sdk/src/response.php',
         'FriendlyCaptcha\\SDK\\VerifyResponseData' => __DIR__ . '/..' . '/friendlycaptcha/sdk/src/response.php',
-        'FriendlyCaptcha\\SDK\\VerifyResponseError' => __DIR__ . '/..' . '/friendlycaptcha/sdk/src/response.php',
         'FriendlyCaptcha\\SDK\\VerifyResult' => __DIR__ . '/..' . '/friendlycaptcha/sdk/src/result.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->classMap = ComposerStaticInitabf157cf28eb088e74a14c026749e730::$classMap;
+            $loader->classMap = ComposerStaticInite7a49695fb5830ce7af21d04acfd2b13::$classMap;
 
         }, null, ClassLoader::class);
     }
